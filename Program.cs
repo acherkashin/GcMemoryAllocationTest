@@ -70,9 +70,17 @@ while (true)
     else if (input == "clear")
     {
         list1.Clear();
+        list1.TrimExcess();
+        
         list2.Clear();
+        list2.TrimExcess();
+        
         list3.Clear();
+        list3.TrimExcess();
+        
         list4.Clear();
+        list4.TrimExcess();
+        
         Console.WriteLine("Lists cleared.");
     }
     else if (input == "gc")
