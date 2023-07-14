@@ -17,6 +17,12 @@ void AddStringsToList(List<string> list)
     }
 }
 
+void ClearList(List<string> list)
+{
+    list.Clear();
+    list.TrimExcess();
+}
+
 void PrintHelp()
 {
     Console.WriteLine("=== Application Help ===");
@@ -69,17 +75,16 @@ while (true)
     }
     else if (input == "clear")
     {
-        list1.Clear();
-        list1.TrimExcess();
+        if (isStarted)
+        {
+            Console.WriteLine("Stop tasks before clearing.");
+            continue;
+        }
         
-        list2.Clear();
-        list2.TrimExcess();
-        
-        list3.Clear();
-        list3.TrimExcess();
-        
-        list4.Clear();
-        list4.TrimExcess();
+        ClearList(list1);
+        ClearList(list2);
+        ClearList(list3);
+        ClearList(list4);
         
         Console.WriteLine("Lists cleared.");
     }
