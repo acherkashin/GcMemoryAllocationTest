@@ -90,7 +90,7 @@ while (true)
     }
     else if (input == "gc")
     {
-        GC.Collect();
+        GC.Collect(GC.MaxGeneration,GCCollectionMode.Forced);
         GC.WaitForPendingFinalizers();
         Console.WriteLine("Garbage collector called.");
     }
